@@ -3,7 +3,7 @@ applications:
   - name: pal-tracker
     path: build/libs/pal-tracker.jar
     routes:
-      - route: PK-pal-tracker.apps.pcf.paltraining.perficient.com
+      - route: pal-tracker.apps.pcf.paltraining.perficient.com
     env:
-      WELCOME_MESSAGE: Hello from Cloud Foundry
+      WELCOME_MESSAGE: Hello from the review environment
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 1.8.+ } }'
