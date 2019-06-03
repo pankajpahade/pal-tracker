@@ -13,7 +13,7 @@ jobs:
       jdk: oraclejdk8
       before_install:
         - chmod +x gradlew
-      script: ./gradlew clean build
+      script: ./gradlew clean build -x test
       before_deploy:
         - git config --local user.name "Travis CI"
         - git config --local user.email "travis@example.com"
