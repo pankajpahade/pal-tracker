@@ -7,8 +7,8 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository  {
     List list = new ArrayList();
     Map<Long, List<TimeEntry>> map = new HashMap<Long, List<TimeEntry>>();
     TimeEntry timeEntry1 = new TimeEntry();
-    static Long i = 1L;
-    static int count = 1;
+    Long i = 1L;
+    //static int count = 1;
 
     @Override
     public TimeEntry create(TimeEntry timeEntry) {
@@ -20,7 +20,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository  {
     }
 
     @Override
-    public TimeEntry find(long timeEntryId) {
+    public TimeEntry find(Long timeEntryId) {
         List<TimeEntry> list = new ArrayList();
         for (Map.Entry<Long, List<TimeEntry>> m : map.entrySet()) {
             if (m.getKey() == timeEntryId){
@@ -37,7 +37,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository  {
     }
 
     @Override
-    public TimeEntry update(long eq, TimeEntry any) {
+    public TimeEntry update(Long eq, TimeEntry any) {
         TimeEntry timeEntry = find(eq);
 
         if (timeEntry !=  null && eq == timeEntry.getId()) {
@@ -52,7 +52,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository  {
     }
 
     @Override
-    public void delete(long timeEntryId) {
+    public void delete(Long timeEntryId) {
             for (Map.Entry<Long, List<TimeEntry>> longListEntry : map.entrySet()) {
                if (longListEntry.getKey() == timeEntryId){
                    List<TimeEntry> removeList = map.remove(longListEntry.getKey());
